@@ -1,0 +1,154 @@
+/* General Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Use border-box for consistent sizing */
+    background-color: #ffff; /* Background color for the page */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Font for the body */
+    color: black; /* Text color */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* min-height: 100vh; */
+}
+
+header {
+    background: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+}
+
+/* Header and Navigation */
+nav {
+    /* background-color: steelblue; Navigation background color */
+    position: relative;
+    color: black; /* Text color in navigation */
+    padding: 25px; /* Padding inside navigation */
+    text-align: center; /* Center align text */
+    display: flex; /* Use flexbox for navigation items */
+    justify-content: space-around; /* Space items evenly */
+}
+
+nav a {
+    color: black; /* Link text color */
+    font-size: 25px; /* Font size for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 20px; /* Padding around links */
+}
+
+nav a:hover {
+    color: black; /* Text color on hover */
+    background-color: #9fffcb; /* Background color on hover */
+    border-radius: 10px; /* Rounded corners on hover */
+    text-shadow: 2px 2px 50px rgba(0, 0, 0, 0.5); /* Text shadow on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
+}
+
+
+
+/* Main Content Styling */
+/* Container Styling */
+.main-content {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Two columns layout */
+    grid-template-rows: auto auto auto auto; /* Define rows explicitly */
+    gap: 20px; /* Space between grid items */
+    padding: 50px 10%; /* Padding around the main content */
+    flex: 1; /* Allow main content to grow and fill available space */
+    align-items: center; /* Vertically center items */
+    justify-items: start; /* Align items to the start of their grid area */
+}
+
+#name {
+    position: relative;
+    font-family: "Righteous";
+    font-size: 75px; /* Font size for name */
+    font-weight: bolder; /* Bold text */
+    grid-row: 2 / 3; /* Place in the first row */
+    grid-column: 1 / 2; /* Span one column */
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+#major {
+    position: relative;
+    color: grey; /* Text color for major */
+    grid-row: 2 / 3; /* Place in the first row */
+    grid-column: 1 / 2; /* Span one column */
+    margin-top: 300px; /* Add a bit of space at the top */
+
+}
+
+#greeting {
+    position: relative;
+    text-align: left;
+    color: black; /* Text color for greeting */
+    font-size: 35px; /* Font size for greeting */
+    grid-row: 1 / 4; /* Place in the second row */
+    grid-column: 3 / 4; /* Span one column */
+    margin-top: 50px; /* Add a bit of space at the top */
+    margin-left: -400px;
+}
+
+#overview {
+    position:relative;
+    grid-row: 2 / 3; /* Place in the second row */
+    grid-column: 2 / 4; /* Span one column */
+    margin-left: 210px;
+    margin-top: 240px; /* Remove top margin */
+}
+
+.button-box {
+    grid-row: 2 / 3; /* Same row as overview */
+    grid-column: 2 / 4; /* Same column as overview */
+    margin-left: 2010px; /* Align with overview */
+    margin-bottom: 1000px; /* Space below the paragraph */
+}
+
+/* Resume Button Styling */
+.resume {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background-color: grey;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Image Styling  */
+img {
+    width: 80%; 
+    height: 1000px;  
+    object-fit: cover; 
+    grid-column: 1 / 4; 
+    grid-row: 1 / 4; 
+    align-self: stretch; 
+    margin-top: -310px;
+    margin-left: 120px;
+    object-position: top;
+    /* padding: 90px;   */
+} 
+
+/* Footer Styling */
+footer {
+    margin-top: -70px; /* Pulls it upward */
+    font-size: 20px; /* Font size for footer text */
+    background: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+    color: black; /* Text color for footer */
+    padding: 25px;
+    padding-left: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.social a img{
+    height: 40px;
+    width: 40px;
+    gap: 20px;
+    padding-left: 10px;
+}
+
+.social {
+    padding-left: 80px;
+}
+
