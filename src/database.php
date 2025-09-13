@@ -1,4 +1,14 @@
 <?php include("header.php"); ?>
-    <h1 id="name">Database Error</h1>
-    <p>Sorry, we are experiencing some technical difficulties. Please try again later.</p>
+    <h1 id="page-title">Welcome Please Register</h1>
+    <form action="database.php" method="post">
+        <label for="username">Name:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+        <input type="submit" value="Register">
+    </form> 
 <?php include("footer.php"); ?>
