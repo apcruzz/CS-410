@@ -79,14 +79,7 @@ nav a:hover {
 }
 
 #greeting {
-    position: relative;
-    text-align: left;
-    color: black; /* Text color for greeting */
-    font-size: 35px; /* Font size for greeting */
-    grid-row: 1 / 4; /* Place in the second row */
-    grid-column: 3 / 4; /* Span one column */
-    margin-top: 50px; /* Add a bit of space at the top */
-    margin-left: -400px;
+    text-align: center; 
 }
 
 #overview {

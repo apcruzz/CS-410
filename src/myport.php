@@ -10,7 +10,7 @@
     if ($name == "Andre"){ ?>
         <p id="greeting">Welcome back, Andre!</p>
     <?php } else { ?>
-        <p id="greeting">Hello, visitor! Feel free <br>to explore my portfolio.</p>
+        <p id="greeting">Hello, visitor!</p>
     <?php
 
     } ?>
