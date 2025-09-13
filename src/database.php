@@ -1,7 +1,8 @@
 <?php include("header.php"); ?>
+
     <h1 id="page-title">Welcome Please Register</h1>
     <form action="database.php" method="post">
-        <label for="username">Name:</label>
+        <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
