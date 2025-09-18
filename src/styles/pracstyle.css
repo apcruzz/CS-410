@@ -9,9 +9,9 @@ body, html {
 body {
     font-family: Arial, sans-serif; /* Font for the body */
     color: black; /* Text color */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* min-height: 100vh; */
+    /* display: flex;
+    flex-direction: column;
+    min-height: 100vh; */
 }
 
 header {
@@ -79,7 +79,8 @@ nav a:hover {
 }
 
 #greeting {
-    position: relative; /* justify-content: start; */ 
+    position: relative; 
+    /* justify-content: start; */ 
     /* text-align: left; */ 
     color: black; /* Text color for greeting */ 
     font-size: 35px; /* Font size for greeting */ 
@@ -91,7 +92,8 @@ nav a:hover {
 
 /* must be removed just for problem solving */
 #php {
-    position: relative; /* justify-content: start; */ 
+    position: relative; 
+    /* justify-content: start; */ 
     /* text-align: left; */ 
     color: black; /* Text color for greeting */ 
     font-size: 35px; /* Font size for greeting */ 
@@ -99,15 +101,6 @@ nav a:hover {
     grid-column: 3 / 4; /* Span one column */ 
     margin-top: 50px; /* Add a bit of space at the top */ 
     margin-left: -400px;
-}
-/* Hello World Styling must be removed just for problem solving*/
-.hello-world {
-    color: #0077ff;
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #overview {
@@ -149,6 +142,66 @@ img {
     object-position: top;
     /* padding: 90px;   */
 } 
+/* <------------------- REGISTRATION FORM STYLING ------------------- >  */
+form {
+    background: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+    padding: 80px; /* Padding inside the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    max-width: 600px; /* Max width for the form */
+    margin: 20px auto; /* Center the form */
+}
+
+label {
+    display: inline-block; /* Make labels inline elements */
+    margin-bottom: 10px; /* Space below labels */
+    font-weight: bold; /* Bold text for labels */
+}
+
+input[type="text"], input[type="password"] , input[type="submit"] , input[type="email"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 20px; /* Space below inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 5px; /* Rounded corners for inputs */
+}
+
+input[type="submit"] {
+    background-color: grey; /* Background color for submit button */
+    color: black; /* Text color for submit button */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Font size for submit button */
+}
+
+input[type="submit"]:hover {
+    background-color: #9fffcb; /* Background color on hover */
+    color: black; /* Text color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
+}
+
+#success-message {
+    color: green; /* Success message color */
+    font-size: 24px; /* Font size for success message */
+    text-align: center; /* Center align success message */
+}
+
+#error-message {
+    color: red; /* Error message color */
+    font-size: 20px; /* Font size for error message */
+    text-align: center; /* Center align error message */
+    margin-bottom: 20px; /* Space below error message */
+}
+
+.label-error {
+    color: red !important; /* Red color for error labels */
+    font-weight: bold;
+}
+
+.input-error {
+    border: 2px solid red !important;
+    background-color: #ffe6e6; /* optional light red background */
+}
 
 /* Footer Styling */
 footer {
