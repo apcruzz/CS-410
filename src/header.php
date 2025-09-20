@@ -9,7 +9,7 @@
     <header>
         <nav>
             <a id="active" href="myport.php">Home</a>
-            <a href="priorcodes.php">About</a>
+            <a href="members.php">About</a>
             <a href="database.php">Database</a>
             <a href="contactme.html">Contact Me</a>
         </nav>

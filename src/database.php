@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_string .= "Invalid email address.<br>";
         $email_error = true;
     }
-
+    
     // --- Insert into DB if valid ---
     if ($valid_post) {
         $connection = mysqli_init();
@@ -52,17 +52,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $valid_post = false;
             $error_string .= "Database connection failed: " . $connection->connect_error . "<br>";
         } else {
-            // Insert into guestbook for display
-            $stmt = $connection->prepare("INSERT INTO guestbook (visitor_name, note) VALUES (?, ?)");
-            $note = "Registered with email: " . $email;
-            $stmt->bind_param("ss", $username, $note);
+            // --- Check for duplicate username ---
+            $check = $connection->prepare("SELECT * FROM guestbook WHERE visitor_name = ?");
+            $check->bind_param("s", $username);
+            $check->execute();
+            $check_result = $check->get_result();
 
-            if (!$stmt->execute()) {
+            if ($check_result->num_rows > 0) {
                 $valid_post = false;
-                $error_string .= "Database error: " . $stmt->error;
+                $error_string .= "Username already in use.<br>";
+                $name_error = true;
+            }
+            $check->close();
+
+            // --- Check for duplicate email ---
+            if ($valid_post) {
+                $check = $connection->prepare("SELECT * FROM guestbook WHERE note = ?");
+                $check->bind_param("s", $email);
+                $check->execute();
+                $check_result = $check->get_result();
+
+                if ($check_result->num_rows > 0) {
+                    $valid_post = false;
+                    $error_string .= "Email already in use.<br>";
+                    $email_error = true;
+                }
+                $check->close();
             }
 
-            $stmt->close();
+            // --- Insert into guestbook if still valid ---
+            if ($valid_post) {
+                $stmt = $connection->prepare("INSERT INTO guestbook (visitor_name, note) VALUES (?, ?)");
+                $note = $email;
+                $stmt->bind_param("ss", $username, $note);
+
+                if (!$stmt->execute()) {
+                    $valid_post = false;
+                    $error_string .= "Database error: " . $stmt->error;
+                }
+
+                $stmt->close();
+            }
+
             $connection->close();
         }
     }
@@ -120,14 +151,14 @@ $connection->real_connect(
     $_ENV["DATABASE_DB"]
 );
 
-$result = mysqli_query($connection, "SELECT * FROM guestbook ORDER BY created_at DESC");
-while($row = mysqli_fetch_array($result)) {
-    print "<tr>";
-    print "<td>" . htmlspecialchars($row["visitor_name"]) . "</td>";
-    print "<td>" . htmlspecialchars($row["created_at"]) . "</td>";
-    print "<td>" . htmlspecialchars($row["note"]) . "</td>";
-    print "</tr>";
-}
+// $result = mysqli_query($connection, "SELECT * FROM guestbook ORDER BY created_at DESC");
+// while($row = mysqli_fetch_array($result)) {
+//     print "<tr>";
+//     print "<td>" . htmlspecialchars($row["visitor_name"]) . "</td>";
+//     print "<td>" . htmlspecialchars($row["created_at"]) . "</td>";
+//     print "<td>" . htmlspecialchars($row["note"]) . "</td>";
+//     print "</tr>";
+// }
 $connection->close();
 ?>
 <!-- </table> -->
