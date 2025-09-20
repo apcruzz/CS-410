@@ -106,6 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     You can now log in with your credentials.</p>
 
 <?php } else { ?>
+    <div class="form-container">
     <h1 id="page-title">Welcome Please Register</h1>
     <?php if ($error_string) { ?>
         <p id="error-message"><?php echo $error_string; ?></p>
@@ -132,6 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <input type="submit" value="Register">
     </form>
+    </div>
 <?php } ?>
 
 <!-- <h2>Guestbook</h2>

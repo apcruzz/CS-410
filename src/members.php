@@ -20,11 +20,11 @@ if (!$result_guestbook) {
 $result_members = mysqli_query($connection, "SELECT * FROM guestbook ORDER BY id ASC");
 
 ?>
+<div class="members-area">
+<h2 id="members-area-title">Members Area</h2>
+<p id="members-area-description">This is a private area for our members.</p>
 
-<h2>Members Area</h2>
-<p>This is a private area for our members.</p>
-
-<table>
+<table id="members-table">
     <tr>
         <th>ID</th>
         <th>Email</th>
@@ -43,6 +43,7 @@ $result_members = mysqli_query($connection, "SELECT * FROM guestbook ORDER BY id
         </tr>
     <?php } ?>
 </table>
+</div>
 
 <?php 
 $connection->close();

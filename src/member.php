@@ -30,7 +30,8 @@ $member = mysqli_fetch_assoc($result);
     <p>ID: <?php echo htmlspecialchars($member["id"]); ?></p>
     <p>Name: <?php echo htmlspecialchars($member["visitor_name"]); ?></p>
     <p>Email: <?php echo htmlspecialchars($member["note"]); ?></p>
-</div>
+
 <a class="update-button" href="update.php?id=<?php echo $_GET['id']?>">Update</a>
+</div>
 
 <?php include 'footer.php'; ?>
